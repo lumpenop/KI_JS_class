@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function banner(obj){
+            let index = 0;
+            function slide(n){
+                if(index== n) index = 0;
+                index++
+                console.log(index);
+                setTimeout(slide,5000);
+            }
+            slide();
+        }
+
+        banner(10);
+        banner(10);
+    </script>
+</body>
+</html>

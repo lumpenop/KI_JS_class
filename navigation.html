@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;
+        margin: 0;}
+
+        .wrap{
+            width: 100%;
+        }
+        .hader{
+            width: 1200px;
+            margin: 0 auto;
+            height: 100px;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .gnb{
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            
+            background: black;
+        }
+        .gnb > li {
+            background: red;
+            width: 30%;
+          
+        }
+
+        .sub{
+            display: none;
+        }
+        
+        .on{
+            display: block !important;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', init);
+
+        function init(){
+            let gnb = document.querySelectorAll('.gnb > li');
+            gnb.forEach((ele, index)=>{
+                console.log(ele, index);
+            })
+
+        }
+    </script>
+
+<div class="wrap">
+    <div class="header">
+        <ul class="gnb">
+            <li>menu1
+                <ul class="sub on">
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+
+                </ul>
+            </li>
+            <li>menu2
+                <ul class="sub">
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+
+                </ul>
+            </li>
+            <li>menu3
+                <ul class="sub">
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+
+                </ul>
+            </li>
+            <li>menu4
+                <ul class="sub">
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+                    <li>menu11</li>
+
+                </ul>
+            </li>
+        </ul>
+       
+        </div>
+    </div>
+</div>
+</body>
+</html>

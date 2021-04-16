@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        function calendar(getYear, getMonth){
+            let setYear = getYear;
+            let setMonth = getMonth;
+
+            let dayArr = ['일','월', '화','수','목','금','토'];
+
+            day = new Date().getDay();
+            
+            let dayStr = '';
+
+            dayArr.forEach(v=>{
+                dayStr += v + ' ';
+            })
+
+            let result =[];
+            result.push(dayStr);
+
+            let days = '';
+            index = 0;
+            dayFirst = new Date(`${setYear}-${setMonth}-1`).getDay();
+            
+            for(var i=0; i<dayFirst; i++){
+                days += '   ';
+            }
+            
+            for(var i=1 ; i<=7-dayFirst;i++){
+                days += `${String(i).padStart(2, 0)} `;
+            }
+
+            result.push(days);
+            days = '';
+            
+            dayLast = new Date(setYear, setMonth, 0).getDate();
+            console.log(`${getYear}년 ${getMonth}월`);
+
+            for(var i=7-dayFirst+1; i<=dayLast ;i++){
+                if(index==7){
+                    index = 0;
+                    result.push(days);
+                    days ='';
+                }
+                days += `${String(i).padStart(2, 0)} `;
+                index++;
+            }
+            result.push(days);
+            
+            result.forEach(v=>{
+                console.log(v);
+            })
+
+        }
+
+        for(var i=1;i<=12;i++){
+            calendar(2021, i);
+        }
+        
+
+
+    </script>
+</body>
+</html>
